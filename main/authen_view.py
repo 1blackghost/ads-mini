@@ -23,9 +23,23 @@ def getPic(request):
     return HttpResponse(path)
 
 def result(request):
-    data=request.session.get("filtered")
+    data = request.session.get("filtered")
+    print(data)
     request.session.clear()
-    return JsonResponse(data,safe=False)
+
+    transformed_data = {
+        "true": [],
+        "false": []
+    }
+
+    for name, value in data.items():
+        if value:
+            transformed_data["true"].append(name.split()[0])
+        else:
+            transformed_data["false"].append(name)
+
+    return JsonResponse(transformed_data, safe=False)
+
 
 def process(request):
     p = os.getcwd() + "\\main\\static\\"
