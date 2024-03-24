@@ -33,9 +33,22 @@ function fet(){
     fetch("http://127.0.0.1:8000/result")
   .then((response) => response.json())
   .then((json) => {
-    var d=JSON.parse(json);
+let i,j;
+    const bad=json["true"];
+    const good=json["false"];
 
-    console.log(d)
+    for(i=0;i<=bad.length-1;i++){
+        document.getElementById("list").innerHTML+="<div class='bad'>
+                        <p>"+bad[i]+"</p>
+                        <img src='/static/images/bad.jpg'/>
+                    </div>"
+    }
+      for(i=0;i<=good.length-1;i++){
+        document.getElementById("list").innerHTML+="<div class='good'>
+                         <p>"+good[i]+"</p>
+                        <img src='/static/images/good.jpg'/>
+                    </div>"
+      }
 })
 }
 else{console.log("error")}});
