@@ -26,7 +26,7 @@ class SocialDistanceChecker:
             face1_name = list(self.faces.keys())[face1_index]
             face2_name = list(self.faces.keys())[face2_index]
             distance = self.calculate_distance(face1_loc, face2_loc)
-            result[f"{face1_name}&{face2_name}"] = f"{distance}m"
+            result[f"{face1_name}&{face2_name}"] = f"{distance}"
         return result
 
 

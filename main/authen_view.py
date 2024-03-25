@@ -47,7 +47,7 @@ def process(request):
     main_image_path = p +  str(filename)
     faces = {
         "Emma Watson": p + "emma.png",
-        "Donald Trump": p + "trump.png",
+        "Donald Trump": p + "donald.png",
         "Chris Evans": p + "chris.png",
 
     }
@@ -62,7 +62,7 @@ def process(request):
         formatted_distances[formatted_name] = value
 
     social_distance_filter = filter.SocialDistanceFilter(formatted_distances)
-    filtered_distances = social_distance_filter.filter_social_distance(distance_threshold=500)
+    filtered_distances = social_distance_filter.filter_social_distance(distance_threshold=600)
     request.session["filtered"]=filtered_distances
     return  JsonResponse({"status":"ok"}, safe=False)
         

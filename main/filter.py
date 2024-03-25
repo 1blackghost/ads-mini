@@ -7,12 +7,15 @@ class SocialDistanceFilter:
     def filter_social_distance(self, distance_threshold):
         filtered_distances = {}
         for key, distance in self.distances.items():
+            
             name1, name2 = key.split('&')
-            name1, name2 = sorted([name1, name2])
-            if float(distance[:-1]) <= distance_threshold:
+            
+            
+            if float(self.distances[key])<= distance_threshold:
                 filtered_distances[name1] = True
                 filtered_distances[name2] = True
             else:
-                filtered_distances[name1] = False
-                filtered_distances[name2] = False
+                if (name1  not in filtered_distances or name2 not in filtered_distances):
+                    filtered_distances[name1] = False
+                    filtered_distances[name2] = False
         return filtered_distances
