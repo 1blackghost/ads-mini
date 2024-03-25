@@ -45,15 +45,15 @@ let i,j=0;
 
     for(i=0;i<=bad.length-1;i++){
         const name=bad[i].toLowerCase();
-        document.getElementById("list").innerHTML+="<div class='bad'><div id='profi' style='background-image:url('/static/"+name+".jpg')'></div><p>"+bad[i]+"</p><img src='/static/images/bad.jpg'/></div>";
-        
+        document.getElementById("list").innerHTML+="<div class='bad'><div id='profi' class='profi'></div><p>"+bad[i]+"</p><img src='/static/images/bad.jpg'/></div>";
+        document.getElementsByClassName('profi')[i].style.backgroundImage="url('/static/"+name+".jpg')";
         
         j++;
       }
       for(i=0;i<=good.length-1;i++){
           const name=good[i].toLowerCase();
-        document.getElementById("list").innerHTML+="<div class='good'><div id='profi' style='background-image:url('/static/"+name+".jpg')'></div><p>"+good[i]+"</p><img src='/static/images/good.jpg'/></div>";
-        
+        document.getElementById("list").innerHTML+="<div class='good'><div id='profi' class='profi'></div><p>"+good[i]+"</p><img src='/static/images/good.jpg'/></div>";
+        document.getElementsByClassName('profi')[i].style.backgroundImage="url('/static/"+name+".jpg');
       }
       document.getElementById("number").innerHTML=j;
 })
