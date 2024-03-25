@@ -7,16 +7,19 @@ function option(a,b,c,d,e,f){
     document.getElementById(e).style.color="grey";
 
 }
-function nav(a,b,c){
+function nav(a,b){
     var op=["h","u","a","l"];
+    var menu=["home","report","about"];
     
 
     for(let i=0;i<=op.length-1;i++){
         document.getElementById(op[i]).style.backgroundColor="white";
     }
+    for(let i=0;i<=menu.length-1;i++){
+        document.getElementById(menu[i]).style.display="none";
+    } 
     a.style.backgroundColor="rgba(0,0,250,0.1)";
     document.getElementById(b).style.display="block";
-    document.getElementById(c).style.display="none"
 
 
 }
