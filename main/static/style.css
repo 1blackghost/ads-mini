@@ -196,7 +196,26 @@ margin:auto 0px;
     margin-left: auto;
 }
 
-#profi{
+.profi{
+    height:50px;
+    width:50px;
+    background-repeat:no-repeat;
+    background-size:cover;
+    border-radius:500px;
+    background-position: center;
+    margin:5px;
+}
+.peop{
+   width:calc(100% - 50px);
+background-color:rgba(0,0,255,0.3);
+margin:5px auto;
+padding:5px 25px;
+border-radius:10px;
+display:flex;
+flex-direction:row ;
+    text-transform:capitalise;
+}
+.profile{
     height:50px;
     width:50px;
     background-repeat:no-repeat;
