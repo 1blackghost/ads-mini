@@ -30,16 +30,16 @@
 
             <div class="upload" id="upload" style="display:block;">
                 {% csrf_token %}
-                <input type="file" id="image" accept="image/*" hidden onchange="prev(this)">
+                <input type="file" id="image" accept="image/*" hidden >
                 <label  for="image">Upload Image</label>
                 <div class="preview" id="prev" style="display:none;">
+                    <div class="uploaded">Image Uploaded successfully</div>
                     <img id="im"/>
-                    <button id="uploadB" onclick="fet()">Submit</button>
                 </div>
             </div>
             <div class="people" id="peoples" style="display: none;">
                 <h2>Analysis Report</h2>
-                <h3>People not following social distancing: <b id="number">4</b></h3>
+                <h3>People not following social distancing: <b id="number"></b></h3>
                 <span class="list" id="list">
                     
                 </span>
@@ -63,7 +63,7 @@
     <script src="/static/main.js"></script>
     <script>
         $(document).ready(function() {
-            $('#uploadB').click(function(event) {
+            $('#image').change(function(event) {
                 console.log("as");
                 event.preventDefault();
                 var formData = new FormData();
@@ -91,7 +91,8 @@
                         $('#progressWrapper').show();
                     },
                     success: function(data) {
-                        alert('Upload successful!');
+                        prev();
+                        fet();
                     },
                     error: function(xhr, status, error) {
                         alert('Upload failed: ' + error);
