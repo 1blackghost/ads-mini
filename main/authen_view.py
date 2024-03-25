@@ -46,9 +46,9 @@ def process(request):
     filename=request.session.get("file")
     main_image_path = p +  str(filename)
     faces = {
-        "Emma Watson": p + "emma.jpg",
-        "Taylor Swift": p + "taylor.jpg",
-        "Joe Biden": p + "joe.jpg",
+        "Emma Watson": p + "emma.png",
+        "Donald Trump": p + "trump.png",
+        "Chris Evans": p + "chris.png",
 
     }
     social_distance_checker = face_Identifier.SocialDistanceChecker(main_image_path, faces)
