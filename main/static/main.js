@@ -44,11 +44,13 @@ let i,j=0;
     document.getElementById("list").innerHTML=" ";
 
     for(i=0;i<=bad.length-1;i++){
-        document.getElementById("list").innerHTML+="<div class='bad'><p>"+bad[i]+"</p><img src='/static/images/bad.jpg'/></div>"
+        document.getElementById("list").innerHTML+="<div class='bad'><div id='profi'></div><p>"+bad[i]+"</p><img src='/static/images/bad.jpg'/></div>";
+        const name=bad[i].toLowerCase();
+        document.getElementById("profi").style.backgroundImage
         j++;
       }
       for(i=0;i<=good.length-1;i++){
-        document.getElementById("list").innerHTML+="<div class='good'><p>"+good[i]+"</p><img src='/static/images/good.jpg'/></div>"
+        document.getElementById("list").innerHTML+="<div class='good'><div id='profi'></div><p>"+good[i]+"</p><img src='/static/images/good.jpg'/></div>"
       }
       document.getElementById("number").innerHTML=j;
 })
