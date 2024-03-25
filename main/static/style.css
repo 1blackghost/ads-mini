@@ -14,6 +14,17 @@ flex-direction:row;
 justify-content:space-between;
 box-shadow:1px 1px 5px grey;
 }
+.uploaded{
+    background-color: rgba(0, 128, 0, 0.5);
+    border-left: 3px solid rgb(0, 65, 0);
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 .topbar > img{
 width:125px;
 height:fit-content;

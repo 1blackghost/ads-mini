@@ -20,10 +20,14 @@ function nav(a,b,c){
 
 
 }
-function prev(a){
+async function prev(){
     document.getElementById("prev").style.display="flex";
-    var ur=document.getElementById("image").value;
-    document.getElementById("im").src=String(ur)
+    
+    await fetch("http://127.0.0.1:8000/getPic")
+    .then((response) => response.text())
+    .then((data) => document.getElementById("im").src=data)
+  
+    
 }
 function fet(){
     fetch("http://127.0.0.1:8000/process")
@@ -33,16 +37,20 @@ function fet(){
     fetch("http://127.0.0.1:8000/result")
   .then((response) => response.json())
   .then((json) => {
-let i,j;
+let i,j=0;
     const bad=json["true"];
     const good=json["false"];
 
+    document.getElementById("list").innerHTML=" ";
+
     for(i=0;i<=bad.length-1;i++){
         document.getElementById("list").innerHTML+="<div class='bad'><p>"+bad[i]+"</p><img src='/static/images/bad.jpg'/></div>"
-    }
+        j++;
+      }
       for(i=0;i<=good.length-1;i++){
         document.getElementById("list").innerHTML+="<div class='good'><p>"+good[i]+"</p><img src='/static/images/good.jpg'/></div>"
       }
+      document.getElementById("number").innerHTML=j;
 })
 }
 else{console.log("error")}});
