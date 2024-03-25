@@ -15,20 +15,17 @@ This project aims to detect social distancing violations using face recognition 
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/your_username/social-distancing-face-recognition.git
+    git clone https://github.com/your_username/ads-mini.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd social-distancing-face-recognition
+    cd ads-mini
     ```
 
 3. Install the required Python packages:
 
-    ```bash
-    pip install -r requirements.txt
-    ```
 
 ### Usage
 
