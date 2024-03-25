@@ -42,17 +42,19 @@ def result(request):
 
 
 def process(request):
-    p = os.getcwd() + "\\main\\static\\"
+    p = os.getcwd() + "/main/static/"
     filename=request.session.get("file")
     main_image_path = p +  str(filename)
     faces = {
-        "Joe Biden": p + "joe.jpg",
         "Emma Watson": p + "emma.jpg",
         "Taylor Swift": p + "taylor.jpg",
+        "Joe Biden": p + "joe.jpg",
+
     }
     social_distance_checker = face_Identifier.SocialDistanceChecker(main_image_path, faces)
     distances = social_distance_checker.check_social_distance()
     formatted_distances = {}
+    print(distances)
 
     for key, value in distances.items():
         names = key.split('&')
@@ -73,7 +75,7 @@ def upload_image(request):
         _, extension = os.path.splitext(image.name)
         new_filename = random_filename + extension
         
-        upload_path = os.getcwd()+"\\main\\static\\"+str(new_filename)
+        upload_path = os.getcwd()+"/main/static/"+str(new_filename)
         
         with open(upload_path, 'wb+') as destination:
             for chunk in image.chunks():
