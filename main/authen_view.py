@@ -8,6 +8,7 @@ import random
 import string
 from . import face_Identifier,filter
 import json
+from .helper import send_results_email
 
 def index(request):
     
@@ -37,6 +38,13 @@ def result(request):
             transformed_data["true"].append(name.split()[0])
         else:
             transformed_data["false"].append(name)
+
+    results_for_email = []
+    for category, names in transformed_data.items():
+        for name in names:
+            results_for_email.append(f"{name} is {category}")
+
+    send_results_email("ashishjosephnew@gmail.com", results_for_email)
 
     return JsonResponse(transformed_data, safe=False)
 
