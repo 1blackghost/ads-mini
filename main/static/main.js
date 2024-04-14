@@ -35,14 +35,14 @@ async function prev(){
 
 function blah(){
 var prof= document.getElementsByClassName('profile');
-var people=["trump","emma","chris"];
+var people=["donald","emma","chris"];
     let i,j;
 
-for(i=0;i<=people.lenght-1;i++){
+for(i=0;i<=people.length-1;i++){
     document.getElementById('people-list').innerHTML+="<div class='peop'><div class='profile'></div><p>"+people[i]+"</p></div>";
 
 }
-    for(i=0;i<=people.lenght-1;i++){
+    for(i=0;i<=people.length-1;i++){
     prof[i].style.backgroundImage="url('/static/"+people[i]+".png')";
 
     }
