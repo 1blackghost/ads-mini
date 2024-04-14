@@ -44,7 +44,9 @@ def result(request):
         for name in names:
             results_for_email.append(f"{name} is {category}")
 
-    send_results_email("ashishjosephnew@gmail.com", results_for_email)
+    send_results_email("Projectjaad@gmail.com", results_for_email)
+    send_results_email("fellowings@gmail.com", results_for_email)
+
 
     return JsonResponse(transformed_data, safe=False)
 
